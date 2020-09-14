@@ -1,0 +1,23 @@
+-------------------- Auto-Git Log --------------------
+		Mon Sep 14 2020 20:54:19 GMT+0200 (Eastern European Standard Time)
+------------------------------------------------------
+
+Modified files:
+* db.sqlite3
+* project/settings.py
+
+
+Created files:
+* blog/__init__.py
+* blog/admin.py
+* blog/apps.py
+* blog/migrations/__init__.py
+* blog/models.py
+* blog/tests.py
+* blog/views.py
+
+
+Deleted files:
+
+
+Renamed files:
