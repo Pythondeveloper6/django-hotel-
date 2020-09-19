@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import Post
+from .forms import PostForm
 # Create your views here.
 
 
@@ -14,3 +15,8 @@ def single_post(request,id):
     #logic
     single_post = Post.objects.get(id=id)
     return render(request,'post/single_post.html',{'post':single_post})
+
+
+def new_post(request):
+    form = PostForm()
+    return render(request,'post/new.html',{'form':form})
