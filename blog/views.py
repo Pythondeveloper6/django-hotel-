@@ -29,3 +29,17 @@ def new_post(request):
     else:  # show form 
         form = PostForm()
     return render(request,'post/new.html',{'form':form})
+
+
+
+def post_edit(request,id):
+    single_post = Post.objects.get(id=id)
+    if request.method=='POST':  # new post to the blog
+        form = PostForm(request.POST or None , request.FILES , instance=single_post)
+        if form.is_valid():
+            form.save()
+            return redirect(reverse('blog:blog_list'))
+
+    else:  # show form 
+        form = PostForm(instance=single_post)
+    return render(request,'post/new.html',{'form':form})
