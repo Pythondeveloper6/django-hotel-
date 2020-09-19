@@ -3,7 +3,8 @@
 <hr>
 
 
-<form method="POST">
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
     {{form}}
     <input type="submit"  value="new post">
 </form>

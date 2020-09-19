@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from .models import Post
 from .forms import PostForm
+from django.urls import reverse
 # Create your views here.
 
 
@@ -18,5 +19,13 @@ def single_post(request,id):
 
 
 def new_post(request):
-    form = PostForm()
+    print('In View')
+    if request.method=='POST':  # new post to the blog
+        form = PostForm(request.POST , request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect(reverse('blog:blog_list'))
+
+    else:  # show form 
+        form = PostForm()
     return render(request,'post/new.html',{'form':form})
