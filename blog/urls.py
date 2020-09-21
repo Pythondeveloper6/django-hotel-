@@ -1,5 +1,5 @@
 from django.urls import path
-from blog.views import all_posts , single_post , new_post , post_edit , PostList , PostDetail
+from blog.views import all_posts , single_post , new_post , post_edit , PostList , PostDetail , PostUpdate
 
 
 
@@ -12,5 +12,8 @@ urlpatterns = [
     path('<int:id>/edit',post_edit,name='post_edit'),
 
     path('cbv',PostList.as_view()),
-    path('cbv/<int:pk>',PostDetail.as_view() )
+    # path('cbv/new',PostUpdate.as_view() ),
+    path('cbv/<int:pk>',PostDetail.as_view()) ,
+    path('cbv/<int:pk>/edit',PostUpdate.as_view()) ,
+
 ]

@@ -2,20 +2,29 @@ from django.shortcuts import redirect, render
 from .models import Post
 from .forms import PostForm
 from django.urls import reverse
-from django.views.generic import ListView , DetailView
-
+from django.views.generic import ListView , DetailView , UpdateView
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 # Create your views here.
 
 # Class Based Views
-class PostList(ListView):
+class PostList(LoginRequiredMixin ,ListView ):
     model = Post
-    template_name = ''
 
 
 class PostDetail(DetailView):
     model = Post
 
+
+class PostUpdate(UpdateView):
+    model = Post
+    fields = ['title','content']
+    success_url = '/blog/cbv'
+
+
+
 # Function Based Views
+@login_required
 def all_posts(request):
     ## logic
     all_posts = Post.objects.all()
