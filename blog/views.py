@@ -2,10 +2,20 @@ from django.shortcuts import redirect, render
 from .models import Post
 from .forms import PostForm
 from django.urls import reverse
+from django.views.generic import ListView , DetailView
+
 # Create your views here.
 
+# Class Based Views
+class PostList(ListView):
+    model = Post
+    template_name = ''
 
 
+class PostDetail(DetailView):
+    model = Post
+
+# Function Based Views
 def all_posts(request):
     ## logic
     all_posts = Post.objects.all()

@@ -1,0 +1,16 @@
+<h1> <a href="{% url 'blog:blog_list' %}">Weclome To Our Blog </a> </h1>
+<a href="{% url 'blog:post_edit' post.id %}"> Edit This Post</a>
+<hr>
+
+
+
+{{post}}
+
+{{post.content}}
+
+
+
+<h3>{{post.created_at}}</h3>
+
+
+<img src="{{post.image.url}}" alt="">
