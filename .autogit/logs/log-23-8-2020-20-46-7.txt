@@ -1,0 +1,21 @@
+-------------------- Auto-Git Log --------------------
+		Wed Sep 23 2020 20:46:07 GMT+0200 (Eastern European Standard Time)
+------------------------------------------------------
+
+Modified files:
+* blog/admin.py
+* blog/models.py
+* blog/templates/blog/post_list.html
+* blog/urls.py
+* db.sqlite3
+* project/urls.py
+
+
+Created files:
+* .autogit/logs/log-21-8-2020-21-7-3.txt
+
+
+Deleted files:
+
+
+Renamed files:

@@ -22,6 +22,10 @@ class Post(models.Model):   # db table
 
     class Meta:
         verbose_name = 'Post'
+        verbose_name_plural = 'Posties'
+        ordering = ('-active',)
+        # db_table = ''
+
 
     def __str__(self):
         return self.title
@@ -32,3 +36,13 @@ class Post(models.Model):   # db table
     def get_absolute_url(self):
         return reverse("blog:cbv_detail", kwargs={"pk": self.id})
     
+
+
+class Comments(models.Model):
+    post = models.ForeignKey(Post , on_delete=models.CASCADE)
+    # post = models.ManyToManyField(Post)
+    text = models.TextField(max_length=200)
+
+
+    def __str__(self):
+        return str(self.post)
