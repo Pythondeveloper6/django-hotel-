@@ -1,0 +1,18 @@
+-------------------- Auto-Git Log --------------------
+		Mon Sep 21 2020 21:07:03 GMT+0200 (Eastern European Standard Time)
+------------------------------------------------------
+
+Modified files:
+* blog/urls.py
+* blog/views.py
+
+
+Created files:
+* .autogit/logs/log-21-8-2020-20-36-50.txt
+* blog/templates/blog/post_form.html
+
+
+Deleted files:
+
+
+Renamed files:

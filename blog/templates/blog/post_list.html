@@ -3,5 +3,5 @@
 <hr>
 
 {% for post in object_list %}
-    <h3><a href="{% url 'blog:blog_detail' post.id %}">{{post}}</a> </h3>
+    <h3><a href="{{post.get_absolute_url}}">{{post}}</a> </h3>
 {% endfor %}

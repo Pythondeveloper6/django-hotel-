@@ -13,7 +13,7 @@ urlpatterns = [
 
     path('cbv',PostList.as_view()),
     # path('cbv/new',PostUpdate.as_view() ),
-    path('cbv/<int:pk>',PostDetail.as_view()) ,
+    path('cbv/<int:pk>',PostDetail.as_view() , name='cbv_detail') ,
     path('cbv/<int:pk>/edit',PostUpdate.as_view()) ,
 
 ]
