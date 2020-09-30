@@ -1,0 +1,35 @@
+-------------------- Auto-Git Log --------------------
+		Wed Sep 30 2020 20:14:37 GMT+0200 (Eastern European Standard Time)
+------------------------------------------------------
+
+Modified files:
+* blog/views.py
+* db.sqlite3
+* project/settings.py
+* project/urls.py
+
+
+Created files:
+* .autogit/logs/log-23-8-2020-21-16-19.txt
+* accounts/__init__.py
+* accounts/admin.py
+* accounts/apps.py
+* accounts/migrations/__init__.py
+* accounts/models.py
+* accounts/templates/registration/logged_out.html
+* accounts/templates/registration/login.html
+* accounts/templates/registration/password_change_done.html
+* accounts/templates/registration/password_change_form.html
+* accounts/templates/registration/password_reset_complete.html
+* accounts/templates/registration/password_reset_confirm.html
+* accounts/templates/registration/password_reset_done.html
+* accounts/templates/registration/password_reset_email.html
+* accounts/templates/registration/password_reset_form.html
+* accounts/tests.py
+* accounts/views.py
+
+
+Deleted files:
+
+
+Renamed files:
