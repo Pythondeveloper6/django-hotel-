@@ -24,7 +24,7 @@ class PostUpdate(UpdateView):
 
 
 # Function Based Views
-@login_required
+# @login_required
 def all_posts(request):
     ## logic
     all_posts = Post.objects.all()
