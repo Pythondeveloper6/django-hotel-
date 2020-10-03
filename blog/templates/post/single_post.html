@@ -14,3 +14,18 @@
 
 
 <img src="{{post.image.url}}" alt="">
+
+
+<hr>
+<h3> COmments </h3>
+
+{% for comment in comments %}
+    <h5>{{comment.text}}</h5>
+{% endfor %}
+
+<h3> Or Leave Your Comment</h3>
+<form method="POST">
+    {% csrf_token %}
+    {{commentform}}
+    <input type="submit" value="Add Comment">
+</form>

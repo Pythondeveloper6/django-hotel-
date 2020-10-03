@@ -1,10 +1,11 @@
 from django.shortcuts import redirect, render
-from .models import Post
-from .forms import PostForm
+from .models import Post , Comments
+from .forms import PostForm , CommentForm
 from django.urls import reverse
 from django.views.generic import ListView , DetailView , UpdateView
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
+
 # Create your views here.
 
 # Class Based Views
@@ -34,7 +35,21 @@ def all_posts(request):
 def single_post(request,id):
     #logic
     single_post = Post.objects.get(id=id)
-    return render(request,'post/single_post.html',{'post':single_post})
+    comments = Comments.objects.filter(post=single_post)
+
+    if request.method == 'POST':
+        commentform = CommentForm(request.POST)
+        if commentform.is_valid():
+            myform = commentform.save(commit=False)
+            myform.author = request.user
+            myform.post = single_post
+            myform.save()
+    
+    else:
+        commentform = CommentForm()
+
+
+    return render(request,'post/single_post.html',{'post':single_post , 'comments':comments , 'commentform':commentform})
 
 
 def new_post(request):

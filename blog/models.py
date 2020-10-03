@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils import timezone
 from django.urls import reverse
+from django.contrib.auth.models import User
 
 # Create your models here.
 
@@ -39,6 +40,7 @@ class Post(models.Model):   # db table
 
 
 class Comments(models.Model):
+    author =  models.ForeignKey(User, related_name='comment_user', on_delete=models.CASCADE)
     post = models.ForeignKey(Post , on_delete=models.CASCADE)
     # post = models.ManyToManyField(Post)
     text = models.TextField(max_length=200)
