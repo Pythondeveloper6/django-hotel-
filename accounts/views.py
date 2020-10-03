@@ -1,11 +1,20 @@
 from django.shortcuts import redirect, render
 from .models import Profile
-from .forms import UserForm , ProfileForm
+from .forms import UserForm , ProfileForm , UserCreateForm
 from django.urls import reverse
 # Create your views here.
 
-def signup():
-    pass
+def signup(request):
+    if request.method == 'POST':
+        signup_form = UserCreateForm(request.POST)
+        if signup_form.is_valid():
+            signup_form.save()
+    
+    else:
+        signup_form = UserCreateForm()
+
+    return render(request,'registration/signup.html',{'signup_form':signup_form})
+
 
 
 def profile(request):

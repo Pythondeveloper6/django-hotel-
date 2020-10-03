@@ -1,0 +1,10 @@
+<h3> Signup Now</h3>
+
+
+
+<form method="POST">
+    {% csrf_token %}
+    {{signup_form}}
+
+    <input type="submit" value="Signup">
+</form>
