@@ -1,0 +1,20 @@
+-------------------- Auto-Git Log --------------------
+		Sat Oct 03 2020 20:18:29 GMT+0200 (Eastern European Standard Time)
+------------------------------------------------------
+
+Modified files:
+* accounts/views.py
+* project/urls.py
+
+
+Created files:
+* accounts/forms.py
+* accounts/templates/profile/profile.html
+* accounts/templates/profile/profile_edit.html
+* accounts/urls.py
+
+
+Deleted files:
+
+
+Renamed files:
