@@ -1,0 +1,10 @@
+<h3> Edit Profile</h3>
+
+<form action="" method="POST">
+    {% csrf_token %}
+    {{user_form}}
+    <hr>
+    {{profile_form}}
+
+    <input type="submit" value="Edit Profile">
+</form>
