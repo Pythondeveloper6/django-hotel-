@@ -5,6 +5,22 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 
+class PostQueryset(models.QuerySet):
+    def get_published(self):
+        return self.filter(type='PUBLISHED')
+
+
+
+class PostManager(models.Manager):
+    def get_queryset(self):
+        return PostQueryset(self.model , using=self._db)
+
+    def get_published(self):
+        return self.get_queryset().get_published()
+
+
+
+
 POST_TYPE = (
     ('DRAFT','DRAFT'),
     ('PUBLISHED' , 'PUBLISHED'),
@@ -20,6 +36,8 @@ class Post(models.Model):   # db table
     type = models.CharField(choices=POST_TYPE , default='DRAFT',max_length=20)
     image = models.ImageField(upload_to='posts/')
 
+
+    objects = PostManager()
 
     class Meta:
         verbose_name = 'Post'
